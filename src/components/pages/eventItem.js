@@ -1,5 +1,4 @@
 "use strict"
-
 import React from 'react';
 import {Row, Col, Well, Button, Glyphicon, Modal, FormControl, FormGroup, ControlLabel} from 'react-bootstrap';
 import {connect} from 'react-redux';
@@ -32,7 +31,7 @@ class EventItem extends React.Component{
 		this.setState({show: false})
 	}
 	updateEvent(){
-        console.log('===checking before changing===', findDOMNode(this.refs.speaker_name).value);
+        console.log('===checking before changing===', this.refs);
         this.setState({show: false})
         this.state.event_name = (findDOMNode(this.refs.event_name).value !== undefined)?findDOMNode(this.refs.event_name).value:"";
         this.state.date = (findDOMNode(this.refs.date).value !== undefined)?findDOMNode(this.refs.date).value:"";

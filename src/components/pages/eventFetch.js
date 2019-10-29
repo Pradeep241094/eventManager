@@ -13,6 +13,7 @@ class EventFetch extends React.Component{
 
     componentDidMount(){
         // Dispatch an action on loading
+        console.log(">>>>>>>>>>>>>>>>>>>>helloooooo in eventFetch")
         this.props.getEvents();
     }
 
@@ -28,6 +29,7 @@ class EventFetch extends React.Component{
         const eventList = this.props.events.map(function(eventArr){
             return (
                 <Col xs={12} md={6} key={eventArr._id}>
+                      {console.log('eventArr>>>>>>>>>>>>>', eventArr)}
                 <EventItem
                     _id = {eventArr._id}
                     event_name = {eventArr.event_name}

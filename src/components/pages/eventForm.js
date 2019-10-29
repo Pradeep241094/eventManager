@@ -199,11 +199,11 @@ class EventForm extends React.Component{
                 </FormGroup>
                 <Button onClick={this.submit.bind(this)}
                 bsStyle = 'primary pull-left' style={{textAlign:"left"}}> 
-                    Save Form
+                    Save
                 </Button>
                 <Button onClick={this.close.bind(this)}
                 bsStyle = 'primary pull-right'> 
-                    Close Form
+                    Close
                 </Button>
                 <br/><br/>
             </Well>

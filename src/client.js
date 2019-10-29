@@ -6,7 +6,8 @@ import {render} from 'react-dom';
 import {Provider} from 'react-redux';
 
 // Import React-Router
-import {Router, Route, IndexRoute, hashHistory} from 'react-router';
+
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 // Import Redux Components
 import {applyMiddleware, createStore} from 'redux';
@@ -26,10 +27,13 @@ import EventList from './components/pages/eventList';
 //Routing through React
 const Routes = (
     <Provider store = {store}>
-    <Router history = {hashHistory}>
-        <Route path = "/" component = {Main}>
-        <IndexRoute component = {EventList}/>
-        </Route>
+    <Router>
+    <Switch>
+        <Route path = "/" render = { () => (<Main>
+            <EventList />
+            </Main>
+            )} />
+        </Switch>
     </Router>
     </Provider>
 )
