@@ -1,10 +1,12 @@
 "use strict"
-
+import nconf from "../config";
 import axios from 'axios';
+
+const host = nconf("host");
 
 export function getEvents(){
     return function(dispatch){
-        axios.get('/events')
+        axios.get(host + '/events')
             .then(function(response){
                 dispatch({
                     type: "GET_EVENTS",
@@ -22,7 +24,7 @@ export function getEvents(){
 
 export function postEvents(event){
     return function(dispatch){
-        axios.post('/events', event)
+        axios.post( host + '/events', event)
             .then(function(response){
                 dispatch({
                     type: "POST_EVENT",
@@ -40,7 +42,7 @@ export function postEvents(event){
 
 export function deleteEvents(id){
     return function(dispatch){
-        axios.delete('/events/'+id)
+        axios.delete(host + '/events/'+id)
             .then(function(response){
                 dispatch({
                     type: "DELETE_BOOK",
@@ -60,7 +62,7 @@ export function updateEvents(event){
     console.log('====check what revieved by update====', event[0]._id);
     console.log('========', event[0]);
     return function(dispatch){
-        axios.put("/events/"+event[0]._id, event[0])
+        axios.put(host + '/events/'+event[0]._id, event[0])
             .then(function(response){
                 dispatch({
                     type: "UPDATE_EVENT",
